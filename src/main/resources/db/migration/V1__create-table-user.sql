@@ -16,6 +16,6 @@ CREATE TABLE produto(
     product_expiry VARCHAR(20) NOT NULL,
     product_description VARCHAR(255),
     product_manufactoring_date VARCHAR(20) NOT NULL,
-    product_supplier_id INT,
-    FOREIGN KEY (product_supplier_id) REFERENCES usuario(user_id)
+    id_user INTEGER,
+    FOREIGN KEY (id_user) REFERENCES usuario(user_id)
 );

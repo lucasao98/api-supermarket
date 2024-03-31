@@ -1,5 +1,6 @@
 package com.example.apisupermarket.domain.product;
 
+import com.example.apisupermarket.domain.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,8 +28,17 @@ public class Product {
     private String product_description;
     @Column(name = "product_manufactoring_date")
     private String product_manufacturing_date;
-    @Column(name = "product_supplier_id")
-    private Integer product_supplier_id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_user")
+    private User usuario;
+
+    public User getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(User usuario) {
+        this.usuario = usuario;
+    }
 
     public Product(RequestProduct requestProduct){
         this.product_name = requestProduct.product_name();
@@ -36,6 +46,5 @@ public class Product {
         this.product_expiry = requestProduct.product_expiry();
         this.product_description = requestProduct.product_description();
         this.product_manufacturing_date = requestProduct.product_manufacturing_date();
-        this.product_supplier_id = requestProduct.product_supplier_id();
     }
 }

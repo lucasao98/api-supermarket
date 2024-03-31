@@ -1,5 +1,6 @@
 package com.example.apisupermarket.domain.user;
 
+import com.example.apisupermarket.domain.product.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
