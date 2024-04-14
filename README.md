@@ -20,4 +20,14 @@ A outra tabela de ***Produtos***, contem dados importantes para a construção d
 
 ![Captura de tela de 2024-03-23 10-34-36](https://github.com/lucasao98/api-supermarket/assets/53714997/90c9a7c2-a6d9-443b-8cf5-ccd45f9b4685)
 
+## Rotas
 
+### Products
+  - [GET]: /products: Retorna todos os produtos cadastrados e se existem fornecedores associados aquele produto.
+  - [POST]: /products: Cadastra os produtos através dos seguinte campos:
+  - product_name: (String) Nome do produto
+  - product_description: (String) Descrição do produto
+  - product_price: (Float) Preço do produto
+  - product_expiry: (String) Data de Validade do produto
+  - product_manufacturing_date: (String)  Data de Fabricação do produto
+  - id_user: (Integer) (Opcional) Esse campo é opcional e serve para informar que aquele produto tem um fornecedor.
