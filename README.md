@@ -25,9 +25,24 @@ A outra tabela de ***Produtos***, contem dados importantes para a construção d
 ### Products
   - [GET]: /products: Retorna todos os produtos cadastrados e se existem fornecedores associados aquele produto.
   - [POST]: /products: Cadastra os produtos através dos seguinte campos:
-  - product_name: (String) Nome do produto
-  - product_description: (String) Descrição do produto
-  - product_price: (Float) Preço do produto
-  - product_expiry: (String) Data de Validade do produto
-  - product_manufacturing_date: (String)  Data de Fabricação do produto
-  - id_user: (Integer) (Opcional) Esse campo é opcional e serve para informar que aquele produto tem um fornecedor.
+      product_name: (String) Nome do produto
+      product_description: (String) Descrição do produto
+      product_price: (Float) Preço do produto
+      product_expiry: (String) Data de Validade do produto
+      product_manufacturing_date: (String)  Data de Fabricação do produto
+      id_user: (Integer) (Opcional) Esse campo é opcional e serve para informar que aquele produto tem um fornecedor.
+  - [PUT]: /products/{id}: Altera o produto, utiliza os mesmos campos do POST.
+  - [DELETE]: /products/{id}: Deleta o produto do sistema.
+
+### Users
+  -  [GET]: /users: Retorna todos os usuários do sistema
+  -  [POST]: /users: Cadastra um usuário no sistema através dos seguintes campos:
+      user_name: (String) Nome do Usuário
+	    user_email: (String) Email do Usuário
+	    user_cpf: (String) Cpf do Usuário
+    	user_phone: (String) Telefone do Usuário
+    	user_password: (String) Senha do Usuário
+    	user_is_active: (Boolean) Se o usuário está ativo ou não
+    	user_role:(Integer) O cargo daquele usuário
+  - [PUT]: /users/{id}: Altera o usuário, utiliza os mesmos campos do POST
+  - [DELETE]: /users/{id}: Deleta o usuário do sistema
